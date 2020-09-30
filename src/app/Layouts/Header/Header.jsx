@@ -4,12 +4,14 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import SearchIcon from '@material-ui/icons/Search';
 import './StyleHeader.css';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+    const {currentUser} = useSelector(state => state.auth)
     return (
         <div className='header'>
             <div className='header-left'>
-                <Avatar src='https://www.theplace2.ru/cache/archive/rihanna/img/rihanna_(1)1-gthumb-ghdata300.jpg'/>
+                <Avatar src={currentUser?.photoURL}/>
                 <AccessTimeIcon fontSize='large'/>
             </div>
             <div className='header-middle'>

@@ -1,0 +1,15 @@
+.info_info{
+    box-shadow: 0px 5px 8px -9px rgba(0,0, 0, 0.75);
+    padding: 40px;
+    background-color: #3f0f40;
+    color: white;
+    border-radius: 10px;
+}
+
+@media(max-width: 900px){
+    .info_info{
+       
+        padding: 0px;
+        
+    }
+}

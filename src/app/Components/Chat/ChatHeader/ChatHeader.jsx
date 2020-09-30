@@ -5,6 +5,7 @@ import { db } from '../../../Firebase/firebaseConfig'
 import './StylesChatHeader.css'
 import { useParams } from 'react-router-dom';
 import ChatMessages from '../ChatMessages/ChatMessages';
+import ChatInput from '../ChatInput/ChatInput';
 
 export default function ChatHeader() {
     const {roomId} = useParams()
@@ -21,7 +22,6 @@ export default function ChatHeader() {
             )))
         ))
     },[roomId])
-    console.log(roomMessages);
     return (
         <Fragment>
 
@@ -46,6 +46,7 @@ export default function ChatHeader() {
                     ))
                 }
             </div>
+            <ChatInput  channelName={roomName?.name} channelId={roomId}/>
         </Fragment>
     )
 }

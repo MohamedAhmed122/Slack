@@ -1,0 +1,23 @@
+.sidebar_options{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px;
+    cursor: pointer;
+}
+.sidebar_options:hover {
+    opacity: 0.9;
+    background-color: #340e36;
+}
+.options_icon{
+    height: 20px !important;
+}
+ h4{
+    font-weight: 300;
+}
+.title{ 
+    padding: 10px;
+}
+.hash{
+    padding: 10px;
+}

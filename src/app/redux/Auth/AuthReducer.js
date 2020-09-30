@@ -1,4 +1,4 @@
-import { USER_SIGN_OUT, USER_SIGN_IN } from "./Auth.Type";
+import { USER_SIGN_OUT, USER_SIGN_IN } from "./AuthType";
 
 const initialState = {
     currentUser: [],

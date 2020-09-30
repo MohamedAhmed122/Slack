@@ -1,6 +1,8 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
+import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import ChatContainer from '../../Components/Chat/ChatContainer/ChatContainer'
+import Login from '../../Components/Login/Login'
 
 import Header from '../../Layouts/Header/Header'
 import SidebarContainer from '../../Layouts/Sidebar/SidebarContainer/SidebarContainer'
@@ -9,11 +11,11 @@ import SidebarContainer from '../../Layouts/Sidebar/SidebarContainer/SidebarCont
 import './StyleMainPage.css'
 
 export default function MainPage() {
-    const [user, setUser] = useState(false)
+    const { isAuthenticated} = useSelector(state => state.auth)
     return (
         <div>
-            {!user ? 
-                <h1>you have To sign in</h1>
+            {!isAuthenticated ? 
+                <Login />
                 :
                 <Fragment>
                     <Header />

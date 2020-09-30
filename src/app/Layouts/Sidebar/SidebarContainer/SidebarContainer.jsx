@@ -38,10 +38,10 @@ export default function SidebarContainer() {
             <hr />
             <SidebarOptions Icon={ExpandMoreIcon} title='Channel'/>
             <hr />
-            <SidebarOptions Icon={AddIcon} title='Add Channel'/>
+            <SidebarOptions addChannelOption Icon={AddIcon} title='Add Channel'/>
             {
                 channels.map(channel =>(
-                    <SidebarOptions title={channel.name} key={channel.id} />
+                    <SidebarOptions title={channel.name} id={channel.id} key={channel.id}/>
                 ))
             }
         </div>

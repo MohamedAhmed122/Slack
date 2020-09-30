@@ -1,15 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import StarsIcon from '@material-ui/icons/Stars';
 import InfoIcon from '@material-ui/icons/Info';
-
+import { db } from '../../../Firebase/firebaseConfig'
 import './StylesChatHeader.css'
+import { useParams } from 'react-router-dom';
+import ChatMessages from '../ChatMessages/ChatMessages';
 
 export default function ChatHeader() {
+    const {roomId} = useParams()
+    const [roomMessages,setRoomMessages] = useState([])
+    const [roomName, setRoomName] = useState(null)
+
+    useEffect(()=>{
+        db.collection('Rooms').doc(roomId).onSnapshot(snapshot=>(
+            setRoomName(snapshot.data())
+        ))
+        db.collection('Rooms').doc(roomId).collection('messages').orderBy('timestamp' , 'asc').onSnapshot(snapshot=>(
+            setRoomMessages(snapshot.docs.map(doc =>(
+                doc.data()
+            )))
+        ))
+    },[roomId])
+
+    console.log(roomName);
+    console.log(roomMessages);
     return (
         <div className='chat_header'>
             <div className='chat_headerLeft'>  
                 <h4>
-                    <strong># general</strong>
+                    <strong># {roomName?.name}</strong>
                     <StarsIcon />
                 </h4>
             </div>
@@ -18,6 +37,9 @@ export default function ChatHeader() {
                 <p>
                     <InfoIcon/><strong>Details</strong>  
                 </p>
+            </div>
+            <div className='chat_messages'>
+                <ChatMessages />
             </div>
         </div>
     )

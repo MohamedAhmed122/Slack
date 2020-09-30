@@ -1,0 +1,46 @@
+.Main_sidebar{
+    display: flex;
+    background-color:#3f0f40 ;
+    border-top: 1px solid #49274b;
+    max-width: 260px;
+    color: white;
+}
+.sidebar_header{
+    display: flex;
+    padding-bottom: 10px;
+    padding: 13px;
+    border-bottom: 1px solid #49274b; 
+
+}
+.sidebar_info h4{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 0.7rem;
+    font-weight: 400;
+}
+
+.create_icon{
+    display: flex;
+    justify-content: flex-start;
+}
+.sidebar_header > div > .MuiSvgIcon-root{
+  
+    color: #49274b;
+    font-size: 19px;
+    background-color: white;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    border-radius: 17.5px;
+    
+   
+}
+.sidebar_info{
+    flex: 1;
+}
+.sidebar_info  .MuiSvgIcon-root{
+  color: green;
+  height: 19px;
+} 
+

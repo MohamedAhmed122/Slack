@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import StarsIcon from '@material-ui/icons/Stars';
 import InfoIcon from '@material-ui/icons/Info';
 import { db } from '../../../Firebase/firebaseConfig'
@@ -21,26 +21,31 @@ export default function ChatHeader() {
             )))
         ))
     },[roomId])
-
-    console.log(roomName);
     console.log(roomMessages);
     return (
-        <div className='chat_header'>
-            <div className='chat_headerLeft'>  
-                <h4>
-                    <strong># {roomName?.name}</strong>
-                    <StarsIcon />
-                </h4>
-            </div>
-            <div />
-            <div className='chat_headerRight'>  
-                <p>
-                    <InfoIcon/><strong>Details</strong>  
-                </p>
+        <Fragment>
+
+            <div className='chat_header'>
+                <div className='chat_headerLeft'>  
+                    <h4>
+                        <strong># {roomName?.name}</strong>
+                        <StarsIcon />
+                    </h4>
+                </div>
+                <div />
+                <div className='chat_headerRight'>  
+                    <p>
+                        <InfoIcon/><strong>Details</strong>  
+                    </p>
+                </div>
             </div>
             <div className='chat_messages'>
-                <ChatMessages />
+                {
+                    roomMessages.map(message =>(
+                        <ChatMessages key={message.message} message={message}  />
+                    ))
+                }
             </div>
-        </div>
+        </Fragment>
     )
 }

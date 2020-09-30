@@ -1,0 +1,17 @@
+.messages{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.messages img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+.messages span{
+    font-weight: 400;
+    font-size: small;
+    color: gray;
+    margin-left: 10px;
+}

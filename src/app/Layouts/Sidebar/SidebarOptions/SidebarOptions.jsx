@@ -20,6 +20,9 @@ export default function SidebarOptions({Icon ,title ,id , addChannelOption }) {
         if(id){
             history.push(`/room/${id}`)
         }else return;
+        // else{
+        //     history.push(`/room/${title}`)
+        // }
     }
     return (
         <div className='sidebar_options' onClick={addChannelOption ? addChannel : selectChannel}>

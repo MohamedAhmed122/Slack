@@ -1,0 +1,31 @@
+.chat_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:15px;
+  border-bottom: 1px solid lightgray;
+}
+.chat_headerRight p{ 
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.chat_headerRight p strong{
+    margin-left: 5px ;
+    color: black;
+}  
+
+.chat_headerRight, .chat_headerLeft .MuiSvgIcon-root{
+    color: gray;
+}
+
+.chat_headerLeft h4{ 
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.chat_headerLeft h4 strong{
+    margin-right: 5px ;
+}  
